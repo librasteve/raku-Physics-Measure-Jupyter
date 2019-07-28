@@ -1,8 +1,7 @@
 # # perl6-Physics-Measure-JupyterBinder
-Jupyter workbook examples for perl6 Physics::Measure
+Jupyter workbook examples for perl6 Physics::Measure (https://github.com/p6steve/perl6-Physics-Measure)
 
 A set of SI, Imperial and US Unit classes that are employed as Measure objects having value, units and error(tbd) that can act as operands in most calculations. Some prefix and physical constants included where needed. Some use of unicode and operator overload.
-
 
 # Instructions
 To use these examples:
