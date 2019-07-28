@@ -23,8 +23,8 @@ RUN apt-get update \
   && zef -v install Math::Polygons --force-test \
   && zef -v install https://github.com/p6steve/perl6-Physics-Measure.git \
   && git clone https://github.com/p6steve/perl6-Physics-Measure-JupyterBinder.git \
-  && mv perl6-Physics-Measure/eg ${HOME} \
-  && rm -rf perl6-Physics-Measure \
+  && mv perl6-Physics-Measure-JupyterBinder/eg ${HOME} \
+  && rm -rf perl6-Physics-Measure-JupyterBinder \
   && chown -R $NB_UID ${HOME} \
   && fix-permissions ${HOME} \
   && jupyter-kernel.p6 --generate-config
