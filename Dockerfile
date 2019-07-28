@@ -21,7 +21,7 @@ RUN apt-get update \
   && zef -v install https://github.com/bduggan/p6-jupyter-kernel.git@master \
   && zef -v install SVG::Plot --force-test \
   && zef -v install Math::Polygons --force-test \
-  && zef -v install https://github.com/p6steve/perl6-Physics-Measure.git \
+  && zef -v install https://github.com/p6steve/perl6-Physics-Measure.git@v0.0.2 \
   && git clone https://github.com/p6steve/perl6-Physics-Measure-JupyterBinder.git \
   && mv perl6-Physics-Measure-JupyterBinder/eg ${HOME} \
   && rm -rf perl6-Physics-Measure-JupyterBinder \
