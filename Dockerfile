@@ -1,36 +1,52 @@
-FROM jupyter/all-spark-notebook:033056e6d164
+FROM sumankhanal/rakudo:daily
+LABEL maintainer="Dr Suman Khanal <suman81765@gmail.com>"
 
-# last update: Sat Dec 29 13:50:00 EST 2018
-# p6steve 0.0.2
 
-USER root
-
-ENV NB_USER jovyan
-ENV NB_UID 100
+#Enabling Binder..................................
+ENV NB_USER suman
+ENV NB_UID 1000
 ENV HOME /home/${NB_USER}
+RUN adduser --disabled-password \
+    --gecos "Default user" \
+    --uid ${NB_UID} \
+    ${NB_USER}
+
+#..............................................
+
+ENV PATH=$PATH:/usr/share/perl6/site/bin
 
 RUN apt-get update \
-  && apt-get install -y build-essential \
-  && git clone https://github.com/rakudo/rakudo.git -b 2019.03.1 \
-  && cd rakudo && perl Configure.pl --prefix=/usr --gen-moar --gen-nqp --backends=moar \
-  && make && make install && cd .. && rm -rf rakudo \
-  && export PATH=$PATH:/usr/share/perl6/site/bin \
-  && git clone https://github.com/ugexe/zef.git \
-     && cd zef && perl6 -Ilib bin/zef install . \
-     && cd .. && rm -rf zef \
-  && zef -v install https://github.com/bduggan/p6-jupyter-kernel.git@master \
-  && zef -v install SVG::Plot --force-test \
-  && zef -v install Math::Polygons --force-test \
-  && zef -v install https://github.com/p6steve/perl6-Physics-Unit.git@v1.1.3 \
-  && zef -v install https://github.com/p6steve/perl6-Physics-Measure.git@v1.0.0 \
-  && git clone https://github.com/p6steve/perl6-Physics-Measure-JupyterBinder.git \
-  && mv perl6-Physics-Measure-JupyterBinder/eg ${HOME} \
-  && rm -rf perl6-Physics-Measure-JupyterBinder \
-  && chown -R $NB_UID ${HOME} \
-  && fix-permissions ${HOME} \
-  && jupyter-kernel.p6 --generate-config
+    && apt-get install -y build-essential \
+    wget libzmq3-dev ca-certificates \
+    python3-pip python3-setuptools \
+    && rm -rf /var/lib/apt/lists/* && pip3 install jupyter notebook asciinema jupyterlab pyscaffold --no-cache-dir \
+    && zef -v install git://github.com/bduggan/p6-jupyter-kernel.git --force-test \
+    && zef install SVG::Plot --force-test \
+    && zef -v install Math::Polygons --force-test \
+    && zef -v install https://github.com/p6steve/raku-Physics-Unit.git@v1.1.3 \
+    && zef -v install https://github.com/p6steve/raku-Physics-Measure.git@v1.0.0 \
+    && git clone https://github.com/p6steve/raku-Physics-Measure-JupyterBinder.git \
+    && mv raku-Physics-Measure-JupyterBinder/eg ${HOME} \
+    && rm -rf perl6-Physics-Measure-JupyterBinder \
+    && jupyter-kernel.raku --generate-config \
+    && ln -s /usr/share/perl6/site/bin/* /usr/local/bin
 
-ENV PATH /usr/share/perl6/site/bin:$PATH
+ENV TINI_VERSION v0.18.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/bin/tini
+RUN chmod +x /usr/bin/tini
+ENTRYPOINT ["/usr/bin/tini", "--"]
 
+
+#For enabling binder..........................
+COPY eg ${HOME}
+
+USER root
+RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
+WORKDIR ${HOME}
+#..............................................
 
+
+EXPOSE 8888
+
+CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
