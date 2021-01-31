@@ -1,35 +1,52 @@
-# Copyright (c) Jupyter Development Team.
-# Distributed under the terms of the Modified BSD License.
-ARG BASE_CONTAINER=jupyter/base-notebook
-FROM $BASE_CONTAINER
+FROM sumankhanal/rakudo:daily
+LABEL maintainer="Dr Suman Khanal <suman81765@gmail.com>"
 
-LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
+
+#Enabling Binder..................................
+ENV NB_USER suman
+ENV NB_UID 1000
+ENV HOME /home/${NB_USER}
+RUN adduser --disabled-password \
+    --gecos "Default user" \
+    --uid ${NB_UID} \
+    ${NB_USER}
+
+#..............................................
+
+ENV PATH=$PATH:/usr/share/perl6/site/bin
+
+RUN apt-get update \
+    && apt-get install -y build-essential \
+    wget libzmq3-dev ca-certificates \
+    python3-pip python3-setuptools \
+    && rm -rf /var/lib/apt/lists/* && pip3 install jupyter notebook asciinema jupyterlab pyscaffold --no-cache-dir \
+    && zef -v install git://github.com/bduggan/p6-jupyter-kernel.git --force-test \
+    && zef install SVG::Plot --force-test \
+    && zef -v install Math::Polygons --force-test \
+    && zef -v install https://github.com/p6steve/raku-Physics-Unit.git@v1.1.3 --force-test \
+    #&& zef -v install https://github.com/p6steve/raku-Physics-Measure.git@v1.0.0 --force-test \
+    #&& git clone https://github.com/p6steve/raku-Physics-Measure-JupyterBinder.git \
+    #&& mv raku-Physics-Measure-JupyterBinder/eg ${HOME} \
+    #&& rm -rf raku-Physics-Measure-JupyterBinder \
+    && jupyter-kernel.raku --generate-config \
+    && ln -s /usr/share/perl6/site/bin/* /usr/local/bin
+
+ENV TINI_VERSION v0.18.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/bin/tini
+RUN chmod +x /usr/bin/tini
+ENTRYPOINT ["/usr/bin/tini", "--"]
+
+
+#For enabling binder..........................
+COPY eg ${HOME}
 
 USER root
+RUN chown -R ${NB_UID} ${HOME}
+USER ${NB_USER}
+WORKDIR ${HOME}
+#..............................................
 
-# Install all OS dependencies for fully functional notebook server
-RUN apt-get update && apt-get install -yq --no-install-recommends \
-    build-essential \
-    vim-tiny \
-    git \
-    inkscape \
-    libsm6 \
-    libxext-dev \
-    libxrender1 \
-    lmodern \
-    netcat \
-    # ---- nbconvert dependencies ----
-    texlive-xetex \
-    texlive-fonts-recommended \
-    texlive-plain-generic \
-    # ----
-    tzdata \
-    unzip \
-    nano-tiny \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Create alternative for nano -> nano-tiny
-RUN update-alternatives --install /usr/bin/nano nano /bin/nano-tiny 10
+EXPOSE 8888
 
-# Switch back to jovyan to avoid accidental container runs as root
-USER $NB_UID
+CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
