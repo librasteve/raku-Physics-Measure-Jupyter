@@ -25,6 +25,7 @@ RUN apt-get update \
     && zef -v install Math::Polygons --force-test \
     && zef -v install https://github.com/p6steve/raku-Physics-Unit.git@v1.1.3 --force-test \
     && zef -v install https://github.com/p6steve/raku-Physics-Measure.git@v1.0.0 --force-test \
+    && zef -v install https://github.com/p6steve/raku-Physics-Constants.git@v1.0.0 --force-test \
     && git clone https://github.com/p6steve/raku-Physics-Measure-JupyterBinder.git \
     && mv raku-Physics-Measure-JupyterBinder/eg ${HOME} \
     && rm -rf raku-Physics-Measure-JupyterBinder \
