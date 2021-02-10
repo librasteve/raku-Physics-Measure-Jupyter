@@ -17,8 +17,8 @@ To launch with Binder:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/p6steve/raku-Physics-Measure-Jupyter/HEAD?filepath=eg%2FREADME.ipynb)
 
-- click the badge above, usually the server will be built and takes about 30 secs to launch
-- if you are unlucky, a new server build can take 15-20 mins
+- click the badge above, usually the server will be built and takes about 60 secs to launch
+- if you are unlucky, a new server build can take 5-10 mins, please be patient
 - there is a small bug and workaround in the README.ipynb notebook
 
 # Inspired by
