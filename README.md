@@ -12,5 +12,12 @@ To use follow these examples:
 - command line *jupyter-notebook* - this will open a jupyter-notebook session in your browser
 - in the browser, go to /eg and click Synopsis.ipynb, then Run each cell - explore & enjoy!
 
+# Instructions for Jupyter Notebook on Binder
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/p6steve/raku-Physics-Measure-Jupyter/HEAD?filepath=eg%2FREADME.ipynb)
+To launch with Binder:
+- click the badge above, usually the server will be built and takes about 30 secs to launch
+- if you are unlucky, a new server build can take 15-20 mins
+- there is a small bug and workaround in the README.ipynb notebook
+
 # Inspired by
 * Brian Duggan's perl6 jupyter-notebook at <https://github.com/bduggan/p6-jupyter-kernel>
