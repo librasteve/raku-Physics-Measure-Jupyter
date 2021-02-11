@@ -19,7 +19,6 @@ To launch with Binder:
 
 - click the badge above, usually the server will be built and takes about 60 secs to launch
 - if you are unlucky, a new server build can take 10-12 mins, please be patient
-- there is a small bug and workaround in the README.ipynb notebook
 
 # Inspired by
 * Brian Duggan's perl6 jupyter-notebook at <https://github.com/bduggan/p6-jupyter-kernel>
