@@ -5,7 +5,7 @@ A set of SI, Imperial and US Unit classes that are employed as Measure objects h
 
 # Instructions for Jupyter Notebook local
 To use follow these examples:
-- zef install --verbose zef install --verbose https://github.com/p6steve/raku-Physics-Measure.git
+- zef install --verbose https://github.com/p6steve/raku-Physics-Measure.git
 - do the Quick Start here Brian Duggan perl6 jupyter-notebook at <https://github.com/bduggan/p6-jupyter-kernel>
 - make a directory - e.g. mkdir raku-Physics, then cd into it
 - git clone https://github.com/p6steve/raku-Physics-Measure-Jupyter.git this repo on your machine and cd into the new raku-Physics-Measure dir
