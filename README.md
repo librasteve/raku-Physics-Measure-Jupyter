@@ -16,8 +16,8 @@ To launch with Binder:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/p6steve/raku-Physics-Measure-Jupyter/HEAD)
 
-- click the badge above, usually the server will be built and takes about 60 secs to launch
-- if you are unlucky, a new server build can take 10-12 mins, please be patient
+- click the badge above, sometimes the server will be built and takes about 60 secs to launch
+- if you are unlucky, a new server build can take 10-12 mins, please be patient (show logs to see the action)
 
 # Inspired by
 * Brian Duggan's perl6 jupyter-notebook at <https://github.com/bduggan/p6-jupyter-kernel>
