@@ -8,8 +8,15 @@ To use follow these examples:
 - ```zef install --verbose https://github.com/p6steve/raku-Physics-Measure.git```
 - do the Quick Start here Brian Duggan perl6 jupyter-notebook at <https://github.com/bduggan/p6-jupyter-kernel>
 - ```git clone https://github.com/p6steve/raku-Physics-Measure-Jupyter.git``` this repo on your machine and ```cd raku-Physics-Measure-Jupyter``` into the new dir
-- command line ```jupyter-notebook``` - this will open a jupyter-notebook session in your browser
+- command line ```jupyter notebook``` - this will open a jupyter-notebook session in your browser
 - in the browser, go to /eg and click Synopsis.ipynb, then Run each cell - explore & enjoy!
+
+# Instructions for Jupyter Notebook on Docker (local)
+- ```git clone https://github.com/p6steve/raku-Physics-Measure-Jupyter.git``` this repo on your machine and ```cd raku-Physics-Measure-Jupyter``` into the new dir
+- Uncomment the CMD line in the Dockerfile (or enter it via shell later ```jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser```)
+- Go ```docker build -t rpmj .``` then ```docker run -itP rpmj``` and make a note of the token
+- Go ```docker container ls -a``` and make a note of the port mapped to 8888
+- Open the container via browser (at that port) and enter that token
 
 # Instructions for Jupyter Notebook on Binder
 To launch with Binder:
