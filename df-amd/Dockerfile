@@ -46,11 +46,11 @@ ENTRYPOINT ["/usr/bin/tini", "--"]
 #COPY ./raku-notebooks/ ${HOME}
 
 USER root
-RUN chown -R ${NB_UID} ${HOME}
+RUN chown -R ${NB_UID}:${NB_USER} ${HOME}
 USER ${NB_USER}
 WORKDIR ${HOME}
 #..............................................
 
 EXPOSE 8888
 
-#CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
+CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
