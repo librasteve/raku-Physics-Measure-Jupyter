@@ -1,5 +1,5 @@
-#FROM sumankhanal/rakudo:2021.05
-FROM p6steve/rakudo:ubuntu-arm64-2021.05
+FROM sumankhanal/rakudo:2021.05
+#FROM p6steve/rakudo:ubuntu-arm64-2021.05
 
 LABEL maintainer="Dr Suman Khanal <suman81765@gmail.com>"
 
