@@ -36,5 +36,6 @@ To launch with Binder:
 - Emphasis on build from scratch FROM sumankhanal/rakudo:2021.05 viz. [sumanstats/raku-notebook](https://github.com/sumanstats/raku-notebook)
 ### df-arm/Dockerfile is recipe for rakudo:rpmnj-arm64-2021.05
 - Emphasis on rapid development for ubuntu on macOS M1 with layered approach FROM p6steve/rakudo:notebook-arm64-2021.05
+- Drop support for Binder (Binder will not run arm64 image)
 - linux/arm64 toolchain: ubuntu... > notebook... > rpmnj... (https://hub.docker.com/repository/docker/p6steve/rakudo)
 - align github/p6steve:  rakudo... > notebook... > rpmnj (raku-Physics-Measure:Navigation:Jupyter)
