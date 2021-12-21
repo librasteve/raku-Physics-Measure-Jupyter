@@ -9,7 +9,7 @@ To launch with Binder:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/p6steve/raku-Physics-Measure-Jupyter/HEAD)
 
 - click the badge above, sometimes the server will be built and takes about 60 secs to launch
-- if you are unlucky, a new server build can take 1-2 mins, please be patient (show logs to see the action)
+- if you are unlucky, a new server build can take 30-40sec, please be patient (show logs to see the action)
 
 # Instructions for Jupyter Notebook local
 To use follow these examples:
