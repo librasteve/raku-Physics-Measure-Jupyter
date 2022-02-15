@@ -1,7 +1,7 @@
 ## raku-Physics-Measure-Jupyter
 Jupyter workbook examples for raku [Physics::Measure](https://github.com/p6steve/raku-Physics-Measure)
 
-A set of SI, Imperial and US Unit classes that are employed as Measure objects having value, units and error(tbd) that can act as operands in most calculations. Some prefix and physical constants included where needed. Some use of unicode and operator overload.
+A set of SI, Imperial and US Unit classes that are employed as Measure objects having value, units and error that can act as operands in most calculations. Some prefix and physical constants included where needed. Some use of unicode and operator overload.
 
 # Instructions for Jupyter Notebook on Binder
 To launch with Binder:
