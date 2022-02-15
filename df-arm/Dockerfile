@@ -1,9 +1,6 @@
 FROM p6steve/rakudo:notebook-arm64-2021.05
     
-RUN zef install -v Math::Polygons \ 
-    && git clone https://github.com/p6steve/raku-Math-Polygons.git \
-    && cp -R raku-Math-Polygons/eg / \
-    && zef install -v Physics::Measure Physics::Constants Physics::Navigation \
+RUN zef install -v Physics::Measure Physics::Constants Physics::Navigation \
     && git clone https://github.com/p6steve/raku-Physics-Measure-Jupyter.git \
     && cp -R raku-Physics-Measure-Jupyter/eg /
 
