@@ -16,7 +16,7 @@ To use follow these examples:
 - ```zef install --verbose https://github.com/p6steve/raku-Physics-Measure.git```
 - do the Quick Start here Brian Duggan perl6 jupyter-notebook at <https://github.com/bduggan/p6-jupyter-kernel>
 - ```git clone https://github.com/p6steve/raku-Physics-Measure-Jupyter.git``` this repo on your machine and ```cd raku-Physics-Measure-Jupyter``` into the new dir
-- command line ```jupyter notebook``` - this will open a jupyter-notebook session in your browser
+- command line ```jupyter-notebook``` - this will open a jupyter-notebook session in your browser
 - in the browser, go to /eg and click Synopsis.ipynb, then Run each cell - explore & enjoy!
 
 # Inspired by
