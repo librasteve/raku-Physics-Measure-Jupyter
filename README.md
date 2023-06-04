@@ -13,7 +13,7 @@ To use on Docker:
 
 _running on root is NOT RECOMMENDED, this is NOT SUITABLE for public facing servers_
 
-_on Apple M-series silicon, Docker Desktop will run it on rosetta_
+_on Apple M-series silicon, Docker Desktop will run it on rosetta ([settings](https://levelup.gitconnected.com/docker-on-apple-silicon-mac-how-to-run-x86-containers-with-rosetta-2-4a679913a0d5))_
 
 ## Installation Instructions
 To install on your local machine:
