@@ -1,4 +1,8 @@
 FROM p6steve/rakudo:ipyjk
+
+RUN zef install -v Math::Polygons \ 
+    && git clone https://github.com/p6steve/raku-Math-Polygons.git \
+    && cp -R raku-Math-Polygons/eg /
     
 RUN zef install -v Physics::Measure Physics::Constants Physics::Navigation \
     && git clone https://github.com/p6steve/raku-Physics-Measure-Jupyter.git \
