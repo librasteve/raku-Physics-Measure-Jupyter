@@ -1,3 +1,6 @@
+ Artistic-2.0](https://img.shields.io/badge/License-Artistic%202.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)
+[![rpmjk -> DH](https://github.com/librasteve/raku-Physics-Measure-Jupyter/actions/workflows/rpmjk-weekly.yaml/badge.svg)](https://github.com/librasteve/raku-Physics-Measure-Jupyter/actions/workflows/rpmjk-weekly.yaml)
+
 ## raku-Physics-Measure-Jupyter
 Jupyter workbook examples for raku [Physics::Measure](https://github.com/librasteve/raku-Physics-Measure)
 
@@ -9,6 +12,7 @@ To use on Docker:
 - ```jupyter-notebook --port=8888 --no-browser --allow-root```
 
 _running on root is NOT RECOMMENDED, this is NOT SUITABLE for public facing servers_
+
 _on Apple M-series silicon, Docker Desktop will run it on rosetta_
 
 ## Installation Instructions
@@ -22,4 +26,4 @@ To install on your local machine:
 ## Inspired by
 * Brian Duggan's perl6 jupyter-notebook at <https://github.com/bduggan/p6-jupyter-kernel>
 
-
+Copyright (c) Henley Cloud Consulting Ltd. 2021-2023
