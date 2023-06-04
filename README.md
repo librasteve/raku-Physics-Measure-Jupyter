@@ -8,7 +8,7 @@ A set of SI, Imperial and US Unit classes that are employed as Measure objects h
 
 ## Docker Instructions
 To use on Docker:
-- ```docker run -it -p 8888:8888 librasteve/rakudo:rpmjk-amd64```
+- ```docker run -it --platform linux/amd64 -p 8888:8888 librasteve/rakudo:rpmjk-amd64```
 - ```jupyter-notebook --port=8888 --no-browser --allow-root```
 
 _running on root is NOT RECOMMENDED, this is NOT SUITABLE for public facing servers_
