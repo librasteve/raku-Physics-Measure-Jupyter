@@ -8,6 +8,7 @@ To use on Docker:
 - ```docker run -it -p 8888:8888 librasteve/rakudo:rpmjk-amd64```
 - ```jupyter-notebook --port=8888 --no-browser --allow-root```
 
+_running on root is NOT RECOMMENDED, this is NOT SUITABLE for public facing servers_
 _on Apple M-series silicon, Docker Desktop will run it on rosetta_
 
 ## Installation Instructions
