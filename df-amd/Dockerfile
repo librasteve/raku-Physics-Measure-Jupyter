@@ -1,5 +1,5 @@
 FROM sumankhanal/rakudo:2021.05
-#FROM p6steve/rakudo:ubuntu-arm64-2021.05
+#FROM librasteve/rakudo:ubuntu-arm64-2021.05
 
 LABEL maintainer="Dr Suman Khanal <suman81765@gmail.com>"
 
@@ -29,10 +29,10 @@ RUN apt-get update \
     && ln -s /usr/share/perl6/site/bin/* /usr/local/bin
 
 RUN zef install -v Math::Polygons \ 
-    && git clone https://github.com/p6steve/raku-Math-Polygons.git \
+    && git clone https://github.com/librasteve/raku-Math-Polygons.git \
     && cp -R raku-Math-Polygons/eg ${HOME} \
     && zef install -v Physics::Measure Physics::Constants Physics::Navigation \
-    && git clone https://github.com/p6steve/raku-Physics-Measure-Jupyter.git \
+    && git clone https://github.com/librasteve/raku-Physics-Measure-Jupyter.git \
     && cp -R raku-Physics-Measure-Jupyter/eg ${HOME}
 
 ENV TINI_VERSION v0.18.0

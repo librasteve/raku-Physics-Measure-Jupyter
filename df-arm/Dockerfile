@@ -1,7 +1,7 @@
-FROM p6steve/rakudo:notebook-arm64-2021.05
+FROM librasteve/rakudo:notebook-arm64-2021.05
     
 RUN zef install -v Physics::Measure Physics::Constants Physics::Navigation \
-    && git clone https://github.com/p6steve/raku-Physics-Measure-Jupyter.git \
+    && git clone https://github.com/librasteve/raku-Physics-Measure-Jupyter.git \
     && cp -R raku-Physics-Measure-Jupyter/eg /
 
 ENTRYPOINT ["/bin/bash"]
