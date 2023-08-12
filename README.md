@@ -12,6 +12,7 @@ To use on Docker:
 - ```jupyter-notebook --port=8888 --no-browser --allow-root```
 
 _running on root is NOT RECOMMENDED, this is NOT SUITABLE for public facing servers_
+
 _drop the -i variant and docker exec if you want the server to outlive your console_
 
 _on Apple M-series silicon, Docker Desktop will run it on rosetta ([settings](https://levelup.gitconnected.com/docker-on-apple-silicon-mac-how-to-run-x86-containers-with-rosetta-2-4a679913a0d5))_
