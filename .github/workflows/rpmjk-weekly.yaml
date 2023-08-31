@@ -5,6 +5,7 @@ on:
     paths:
       - Dockerfile
       - .github/workflows/rpmjk-weekly.yaml
+      - eg/
   schedule:
       - cron: "43 3 * * 5"
 
