@@ -1,0 +1,9 @@
+{
+    "name": "moduleName",
+    "description": "Write me!",
+    "version": "0.1",
+    "raku": "6.*",
+    "auth": "Write me!",
+    "license": "Write me!",
+    "source-url": "Write me!"
+}
