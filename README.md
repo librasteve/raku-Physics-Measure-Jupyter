@@ -29,7 +29,11 @@ To install on your local machine:
 - command line ```jupyter-notebook``` - this will open a jupyter-notebook session in your browser
 - in the browser, go to /eg and click Synopsis.ipynb, then Run each cell - explore & enjoy!
 
+## Build Instructions
+The following builds for amd64 (seems to work fine on M1 also using Rosetta):
+```docker build -t test --platform=linux/amd64 . ```
+
 ## Inspired by
 * Brian Duggan's perl6 jupyter-notebook at <https://github.com/bduggan/p6-jupyter-kernel>
 
-Copyright (c) Henley Cloud Consulting Ltd. 2021-2023
+Copyright (c) Henley Cloud Consulting Ltd. 2024
