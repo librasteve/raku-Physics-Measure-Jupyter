@@ -32,7 +32,7 @@ To install on your local machine:
 ## Build Instructions
 To build the Docker image from scratch (multiarchitecture):
 
-```docker buildx build -t librasteve/rakudo:rpmjk .```
+```docker buildx build --platform linux/amd64,linux/arm64 -t librasteve/rakudo:rpmjk .```
 
 NB. Enable the containerd image store in the Docker Desktop settings for buildx support.
 
