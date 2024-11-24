@@ -8,7 +8,7 @@ A set of SI, Imperial and US Unit classes that are employed as Measure objects h
 
 ## Docker Instructions
 To use on Docker:
-- ```docker run -it --platform linux/amd64 -p 8888:8888 librasteve/rakudo:rpmjk-amd64```
+- ```docker run -it -p 8888:8888 librasteve/rakudo:rpmjk```
 - ```jupyter-notebook --port=8888 --no-browser --allow-root```
 
 _running on root is NOT RECOMMENDED, this is NOT SUITABLE for public facing servers_
@@ -30,8 +30,11 @@ To install on your local machine:
 - in the browser, go to /eg and click Synopsis.ipynb, then Run each cell - explore & enjoy!
 
 ## Build Instructions
-The following builds for amd64 (seems to work fine on M1 also using Rosetta):
-```docker build -t test --platform=linux/amd64 . ```
+To build the Docker image from scratch (multiarchitecture):
+
+```docker buildx build -t librasteve/rakudo:rpmjk .```
+
+NB. Enable the containerd image store in the Docker Desktop settings for buildx support.
 
 ## Inspired by
 * Brian Duggan's perl6 jupyter-notebook at <https://github.com/bduggan/p6-jupyter-kernel>
